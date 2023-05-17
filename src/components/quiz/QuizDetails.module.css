@@ -1,0 +1,25 @@
+
+.titleText {
+    font-size: 20px;
+    line-height: 120%;
+    font-family: 'Rubik' , sans-serif !important;
+    font-style: normal;
+    font-weight: 600;
+    color: #4a4a68 !important;
+}
+.imageAdjust {
+    height: 20px;
+    margin-right: 8px;
+}
+
+.about {
+    background-color: rgb(247, 247, 248);
+    color: rgb(55, 65, 81);
+}
+
+.readBtn {
+    border: none !important;
+    background-color: none !important;
+    color: green;
+}
+

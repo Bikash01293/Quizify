@@ -1,0 +1,25 @@
+
+.container {
+    position: fixed;
+    bottom: 0;
+    background-color: var(--white-color);
+    width: 100%;
+    left: 0;
+    z-index: 5;
+    box-shadow: 0 -2px 4px rgba(0,0,0,.08), 0 -4px 12px rgba(0,0,0,.08);
+    margin-bottom: 0 !important;
+    padding: 25px 0 !important;
+}
+
+.btnprimary {
+    background-color: #8031a7 !important;
+    color: #FFFFFF !important;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 22px !important;
+    text-align: center;
+    font-weight: 600 !important;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}

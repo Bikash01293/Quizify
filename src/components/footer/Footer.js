@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 import Image from 'react-bootstrap/Image';
 import style from '../footer/Footer.module.css'
 
@@ -47,7 +48,7 @@ function Footer() {
                 </span>
               </div>
               <p className={style.instruction}>This quiz can only be attempted once daily.</p>
-              <a onClick={toggle} className={style.startQuiz} href="/questions">Start Quiz</a>
+              <Link className={style.startQuiz} to="/questions">Start Quiz</Link>
             </div>
           </div>
           : 

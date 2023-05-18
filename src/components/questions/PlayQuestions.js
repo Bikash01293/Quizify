@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+
 import { questions } from '../../helpers/QuestionBank'
-import useWindowSize from '../../utils/WindowSize';
-import Confetti from 'react-confetti'
+
+
 import style from '../questions/PlayQuestions.module.css'
 import Timer from './Timer';
+import Score from './Score';
 
 
 function Questions() {
@@ -13,7 +15,6 @@ function Questions() {
   const [answer, setAnswer] = useState(null);
   const [Index, setIndex] = useState(-1);
   const [activeBtn, setActiveBtn] = useState(false)
-  const { width, height } = useWindowSize();
 
   const onExpire = () => {
     setShowScore(true)
@@ -38,21 +39,7 @@ function Questions() {
     <div >
       {showScore === true?
         <div>
-          <div className={style.score}>
-            <Confetti
-              width={width}
-              height={height}
-            />
-            <span className={style.scoreDetail}>You Scored {score} out of {questions.length}</span>
-          </div>
-          <div className={style.btnBack} >
-                <button onClick={() => {
-                }} 
-                className={style.goback}>
-                  <a className={style.back} href='/'>Go Back</a>
-                </button>
-          </div>
-          
+          <Score score={score} questions={questions} /> 
         </div>
         :
         <div className={style.mainContainer}>

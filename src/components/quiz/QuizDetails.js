@@ -39,12 +39,6 @@ function QuizDetails() {
                         <img className={style.imageAdjust} src="https://seekify-public.s3.ap-south-1.amazonaws.com/resources/1674468165626-Group%208417.png" alt="attempts" />1 Attempt Daily
                     </p>
 
-                   
-
-                   
-
-                   
-
                 </div>
             </div>
         </div>

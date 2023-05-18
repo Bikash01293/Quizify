@@ -15,7 +15,7 @@ function Navigation() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link style={{ fontWeight: 'bold' }} href="/">Home</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

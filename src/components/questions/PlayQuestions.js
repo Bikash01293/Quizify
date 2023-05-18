@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { questions } from '../../helpers/QuestionBank'
+import useWindowSize from '../../utils/WindowSize';
+import Confetti from 'react-confetti'
 import style from '../questions/PlayQuestions.module.css'
 import Timer from './Timer';
 
@@ -9,7 +11,9 @@ function Questions() {
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [answer, setAnswer] = useState(null);
-  const [btnColor, setBtnColor] = useState("white");
+  const [Index, setIndex] = useState(-1);
+  const [activeBtn, setActiveBtn] = useState(false)
+  const { width, height } = useWindowSize();
 
   const onExpire = () => {
     setShowScore(true)
@@ -26,22 +30,28 @@ function Questions() {
     } else {
       setShowScore(true);
     }
+    setIndex(-1);
     
   };
+
   return (
     <div >
       {showScore === true?
         <div>
           <div className={style.score}>
-            <span className={style.scoreDetail}>You Scroced {score} out of {questions.length}</span>
+            <Confetti
+              width={width}
+              height={height}
+            />
+            <span className={style.scoreDetail}>You Scored {score} out of {questions.length}</span>
           </div>
-          <div className={style.btn} >
+          <div className={style.btnBack} >
                 <button onClick={() => {
                 }} 
                 className={style.goback}>
                   <a className={style.back} href='/'>Go Back</a>
                 </button>
-              </div>
+          </div>
           
         </div>
         :
@@ -54,21 +64,25 @@ function Questions() {
             <div className={style.questionText}>
               <div >{questions[currentQuestion].questionText}</div>
               <div className={style.answer}>
-              {questions[currentQuestion].answerOptions.map((answerOptions) => (
-                <button key={answerOptions.answerText} onClick={() => {
+              {questions[currentQuestion].answerOptions.map((answerOptions, index) => (
+                <div key={answerOptions.answerText} 
+                  onClick={() => {
                   setAnswer(answerOptions.isCorrect);
-                  btnColor === "white" ? setBtnColor("green") : setBtnColor("white");
+                  setIndex(index)
+                  setActiveBtn(true)
                 }}
-                style={{ backgroundColor: btnColor }}
+                style={{background: Index === index ? '#72c796' : 'white'}}
                 className={style.answerOptions}
-                >{answerOptions.answerText}</button>
+                >{answerOptions.answerText}</div>
               ))}
             </div>
             {currentQuestion === 4 ?
               <div className={style.btn} >
               <button  onClick={() =>{
                  handleAnswerButtonClick();
+                 setActiveBtn(false)
                 }} 
+                style={{backgroundColor: activeBtn === true ? '#8031a7' : '#b471d5'}}
                 className={style.btnprimary}
                 >Submit</button>
               </div>
@@ -76,7 +90,9 @@ function Questions() {
               <div className={style.btn} >
                 <button onClick={() => {
                  handleAnswerButtonClick();
+                 setActiveBtn(false)
                 }} 
+                style={{backgroundColor: activeBtn === true ? '#8031a7' : '#b471d5'}}
                 className={style.btnprimary}>Next</button>
               </div>
 

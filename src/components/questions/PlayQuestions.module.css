@@ -20,7 +20,7 @@
 }
 
 .timer {
-    background-color: #72c796;
+    background-color: #b471d5;
     border-radius: 20px;
     padding: 0px 16px;
 }
@@ -50,18 +50,18 @@
     left: 0;
     z-index: 5;
     box-shadow: 0 -2px 4px rgba(0,0,0,.08), 0 -4px 12px rgba(0,0,0,.08);
-    margin-bottom: 0 !important;
-    padding: 25px 0 !important;
+    margin-bottom: 0 ;
+    padding: 25px 0 ;
 }
 
 .btnprimary {
-    background-color: #8031a7 !important;
-    color: #FFFFFF !important;
+   
+    color: #FFFFFF ;
     padding: 12px 40px;
     border: none;
-    border-radius: 22px !important;
+    border-radius: 22px ;
     text-align: center;
-    font-weight: 600 !important;
+    font-weight: 600 ;
     text-decoration: none;
     display: block;
     text-align: center;
@@ -72,16 +72,17 @@
     border-radius: 16px;
     margin-top: 20px;
     padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .goback {
-    background-color: #8031a7 !important;
-    color: #FFFFFF !important;
+    background-color: #8031a7 ;
+    color: #FFFFFF ;
     padding: 12px 40px;
     border: none;
-    border-radius: 22px !important;
+    border-radius: 22px ;
     text-align: center;
-    font-weight: 600 !important;
+    font-weight: 600 ;
     text-decoration: none;
     display: block;
     text-align: center;
@@ -91,7 +92,7 @@
 .score {
     display: flex;
     justify-content: center;
-    background-color: #8031a7 !important;
+    background-color: #8031a7 ;
     height: 90vh;
     color: white;
 }
@@ -100,4 +101,19 @@
     margin-top: 45vh;
     font-size: 20px;
     font-weight: bold;
+}
+
+.btnBack {
+    position: fixed;
+    background-color: #ffffff;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+    box-shadow: 0 -2px 4px rgba(0,0,0,.08), 0 -4px 12px rgba(0,0,0,.08);
+    margin-bottom: 0 ;
+    padding: 25px 0 ;
+}
+
+.selected {
+    background-color: green;
 }
